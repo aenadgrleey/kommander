@@ -1,0 +1,55 @@
+[versions]
+compose = "1.9.2"
+material = "1.4.0"
+icons = "1.7.3"
+junit = "4.13.2"
+kotlin = "2.2.21"
+coroutines = "1.10.1"
+serialization = "1.9.0"
+okio = "3.16.2"
+
+[libraries]
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+okio = { module = "com.squareup.okio:okio", version.ref = "okio" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+junit = { module = "junit:junit", version.ref = "junit" }
+compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose" }
+compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose" }
+compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose" }
+compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material" }
+compose-ui-util = { module = "org.jetbrains.compose.ui:ui-util", version.ref = "compose" }
+compose-ui-text = { module = "org.jetbrains.compose.ui:ui-text", version = "compose" }
+compose-icons = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "icons" }
+compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose" }
+coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "coroutines" }
+
+
+[bundles]
+core = [
+    "coroutines-core",
+    "okio"
+]
+ui = [
+    "compose-runtime",
+    "compose-ui",
+    "compose-icons",
+    "compose-ui-util",
+    "compose-ui-text",
+    "compose-foundation",
+    "compose-material3",
+    "compose-components-resources",
+    "coroutines-swing"
+
+]
+test = [
+    "kotlin-test",
+    "kotlin-testJunit",
+    "junit"
+]
+
+[plugins]
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
